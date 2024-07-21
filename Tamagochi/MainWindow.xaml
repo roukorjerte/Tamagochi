@@ -1,0 +1,402 @@
+﻿<Window x:Class="Tamagochi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tamagochi"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="350"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown"
+        >
+        
+        <Border
+        CornerRadius="30"
+        BorderThickness="5"
+        Opacity="1"
+            >
+            <!--outline styling-->
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34AE" Offset="0.5"/>
+                <GradientStop Color="#8A16C1" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <!--background styling-->
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#060531" Offset="0.5"/>
+                <GradientStop Color="#1b1448" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <!--grid rows-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="440"/>
+                <RowDefinition/>
+                <RowDefinition Height="10"/>
+
+            </Grid.RowDefinitions>
+
+
+            <!--Header-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="15"/>
+                </Grid.ColumnDefinitions>
+
+                <!--header text design-->
+                <TextBlock
+                    Text="PETNAME"
+                    Foreground="White"
+                    FontSize="16"
+                    FontFamily="Montserrat"
+                    Grid.Column="0"
+                    VerticalAlignment="Center"
+                    Margin="50,5,0,0"/>
+                
+                <!--minimize button design-->
+                <Button
+                    x:Name="btnMinimize"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Content="-"
+                    FontFamily="Montserrat"
+                    FontSize="16"
+                    Cursor="Hand"
+                    Grid.Column="1"
+                    Click="btnMinimize_Click">
+
+                    <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#28aeed"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#278bef"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    </Button.Style>
+              
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="18" Height="18"
+                                CornerRadius="9"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                </Button>
+
+                <!--close button design-->
+                <Button
+                    x:Name="btnClose"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Content="X"
+                    FontFamily="Montserrat"
+                    FontSize="16"
+                    Cursor="Hand"
+                    Grid.Column="2"
+                    Click="btnClose_Click"
+                    >
+                    
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#da34ae"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#c62dae"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18" Height="18"
+                CornerRadius="9"
+                Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+
+            <!--Progress bars-->
+            <!--hunger bar-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="45"/>
+                    <ColumnDefinition Width="280"/> 
+                </Grid.ColumnDefinitions>
+                
+                <ProgressBar
+                    Minimum="0"
+                    Maximum="100"
+                    Name="hungerBar"
+                    Height="10"
+                    Grid.Column="2"
+                    Width="240"
+                    Background="#a82586"
+                    Foreground="#da34ae"
+                    BorderThickness="0"
+                 >
+                </ProgressBar>
+
+                <TextBlock
+                    Text="Hunger"
+                    Foreground="White"
+                    Grid.Column="1"
+                    FontSize="12"
+                    FontFamily="Montserrat"
+                    >
+                </TextBlock>
+            </Grid>
+            
+            <!--happiness bar-->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="55"/>
+                    <ColumnDefinition Width="260"/>
+                </Grid.ColumnDefinitions>
+
+                <ProgressBar
+                    Minimum="0"
+                    Maximum="100"
+                    Name="happinessBar"
+                    Height="10"
+                    Grid.Column="2"
+                    Width="240"
+                    Background="#3019a6"
+                    Foreground="#462AD8"
+                    BorderThickness="0"
+                 >
+                </ProgressBar>
+
+                <TextBlock
+                    Text="Happiness"
+                    Foreground="White"
+                    Grid.Column="1"
+                    FontSize="12"
+                    FontFamily="Montserrat"
+                    >
+                </TextBlock>
+            </Grid>
+
+            <!--Sleep bar-->
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="55"/>
+                    <ColumnDefinition Width="260"/>
+                </Grid.ColumnDefinitions>
+
+                <ProgressBar
+                    Minimum="0"
+                    Maximum="200"
+                    Name="sleepBar"
+                    Height="10"
+                    Grid.Column="2"
+                    Width="240"
+                    Background="#8a0e45"
+                    Foreground="#ba1861"
+                    BorderThickness="0"
+                 >
+                </ProgressBar>
+
+                <TextBlock
+                    Text="Sleep"
+                    Foreground="White"
+                    Grid.Column="1"
+                    FontSize="12"
+                    FontFamily="Montserrat"
+                    >
+                </TextBlock>
+            </Grid>
+
+            <Image 
+                Name="GifImage"
+                gif:ImageBehavior.AnimatedSource="C:\Users\dsiva\source\repos\Tamagochi\Tamagochi\Media\base.gif"
+                Grid.Row="4" />
+            <Image 
+                Name="Image"
+                Source ="C:\Users\dsiva\source\repos\Tamagochi\Tamagochi\Media\parrot_eating.jpg"
+                Visibility="Hidden"
+                Grid.Row="4" />
+
+            <!--Footer with buttons-->
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!--Feed button-->
+                <Button
+                    x:Name="btnFeed"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Content="Eat"
+                    FontFamily="Montserrat"
+                    FontSize="16"
+                    Cursor="Hand"
+                    Grid.Column="0"
+                    Click="btnFeed_Click">
+
+                    <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#da34ae"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#a82586"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="60" Height="60"
+                                    CornerRadius="9"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                    
+                </Button>
+                <!--Play button-->
+                <Button
+                    x:Name="btnPlay"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Content="Play"
+                    FontFamily="Montserrat"
+                    FontSize="16"
+                    Cursor="Hand"
+                    Grid.Column="1"
+                    Click="btnPlay_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#3019a6"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="60" Height="60"
+                     CornerRadius="9"
+                     Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                         HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <!--Sleep button-->
+                <Button
+                    x:Name="btnSleep"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Content="Sleep"
+                    FontFamily="Montserrat"
+                    FontSize="16"
+                    Cursor="Hand"
+                    Grid.Column="2"
+                    Click="btnSleep_Click">
+                    
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#ba1861"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#8a0e45"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="60" Height="60"
+                                CornerRadius="9"
+                                Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <!--Clean button-->
+                <Button
+                    x:Name="btnClean"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Content="Clean"
+                    FontFamily="Montserrat"
+                    FontSize="16"
+                    Cursor="Hand"
+                    Grid.Column="3"
+                    Click="btnClean_Click">
+                    
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#195da6"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#0e4682"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="60" Height="60"
+            CornerRadius="9"
+            Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+               HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+            
+        </Grid>
+    </Border>
+    
+</Window>
