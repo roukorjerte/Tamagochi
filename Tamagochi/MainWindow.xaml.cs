@@ -15,6 +15,7 @@ using System.Windows.Threading;
 using System.Diagnostics.Metrics;
 using System.Security.Cryptography;
 using System.ComponentModel;
+using System.Diagnostics;
 
 
 namespace Tamagochi
@@ -34,9 +35,9 @@ namespace Tamagochi
         {
             InitializeComponent();
             animal = new Animal();
-            animal.Hunger = 10;
-            animal.Cleanness = 10;
-            animal.Happiness = 10;
+            animal.Hunger = 100;
+            animal.Cleanness = 100;
+            animal.Happiness = 100;
             animal.Sleep = 10;
 
             timer = new DispatcherTimer();
@@ -85,10 +86,11 @@ namespace Tamagochi
                 animal.Sleep = animal.Sleep - 3;
                 sleepBar.Value = animal.Sleep;
             }
-            if (animal.Sleep == 0)
+             Debug.WriteLine(animal.Sleep.ToString());
+            if (animal.Sleep <= 0)
             {
                 await LoadImageAsyncOnStateChange(@"/Media/parrot_sleepy.jpg");
-
+                
             }
         }
 
