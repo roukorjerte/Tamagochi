@@ -9,11 +9,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Media\parrot_bored.jpg" />
+    <None Remove="Media\parrot_clean.jpg" />
+    <None Remove="Media\parrot_dead.jpg" />
+    <None Remove="Media\parrot_dirty.jpg" />
+    <None Remove="Media\parrot_eating.jpg" />
+    <None Remove="Media\parrot_playing.jpg" />
+    <None Remove="Media\parrot_sleeping.jpg" />
+    <None Remove="Media\parrot_sleepy.jpg" />
+  </ItemGroup>
+
+ 
+  <ItemGroup>
     <Folder Include="Model\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Media\base.gif" />
+    <Resource Include="Media\parrot_bored.jpg" />
+    <Resource Include="Media\parrot_clean.jpg" />
+    <Resource Include="Media\parrot_dead.jpg" />
+    <Resource Include="Media\parrot_dirty.jpg" />
+    <Resource Include="Media\parrot_eating.jpg" />
+    <Resource Include="Media\parrot_playing.jpg" />
+    <Resource Include="Media\parrot_sleeping.jpg" />
+    <Resource Include="Media\parrot_sleepy.jpg" />
   </ItemGroup>
 
 </Project>

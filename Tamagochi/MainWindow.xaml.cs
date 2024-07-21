@@ -60,7 +60,7 @@ namespace Tamagochi
             }
             if (animal.Hunger == 0)
             {
-                await LoadImageAsyncOnStateChange(@"C:\Users\dsiva\source\repos\Tamagochi\Tamagochi\Media\parrot_dead.jpg");
+                await LoadImageAsyncOnStateChange(@"/Media/parrot_dead.jpg");
             }
             if (animal.Cleanness > 0)
             {
@@ -68,7 +68,7 @@ namespace Tamagochi
             }
             if (animal.Cleanness == 0)
             {
-                await LoadImageAsyncOnStateChange(@"C:\Users\dsiva\source\repos\Tamagochi\Tamagochi\Media\parrot_dirty.jpg");
+                await LoadImageAsyncOnStateChange(@"/Media/parrot_dirty.jpg");
 
             }
             if (counter % 2 == 0 && animal.Happiness > 0)
@@ -78,7 +78,7 @@ namespace Tamagochi
             }
             if (animal.Happiness ==0)
             {
-                await LoadImageAsyncOnStateChange(@"C:\Users\dsiva\source\repos\Tamagochi\Tamagochi\Media\parrot_bored.jpg");
+                await LoadImageAsyncOnStateChange(@"/Media/parrot_bored.jpg");
             }
             if (counter % 5 == 0 && animal.Sleep > 0)
             {
@@ -87,7 +87,7 @@ namespace Tamagochi
             }
             if (animal.Sleep == 0)
             {
-                await LoadImageAsyncOnStateChange(@"C:\Users\dsiva\source\repos\Tamagochi\Tamagochi\Media\parrot_sleepy.jpg");
+                await LoadImageAsyncOnStateChange(@"/Media/parrot_sleepy.jpg");
 
             }
         }
@@ -98,7 +98,7 @@ namespace Tamagochi
         {
             var bitmap = new BitmapImage();
             bitmap.BeginInit();
-            bitmap.UriSource = new Uri(imagePath, UriKind.Absolute);
+            bitmap.UriSource = new Uri(imagePath, UriKind.Relative);
             bitmap.EndInit();
             Image.Source = bitmap;
 
@@ -116,7 +116,7 @@ namespace Tamagochi
         {
             var bitmap = new BitmapImage();
             bitmap.BeginInit();
-            bitmap.UriSource = new Uri(imagePath, UriKind.Absolute);
+            bitmap.UriSource = new Uri(imagePath, UriKind.Relative);
             bitmap.EndInit();
             Image.Source = bitmap;
             GifImage.Visibility = Visibility.Hidden;
@@ -150,7 +150,7 @@ namespace Tamagochi
             animal.Hunger = Math.Min(animal.Hunger + 20,100);
             hungerBar.Value = animal.Hunger;
 
-            await LoadAImageAsyncOnAction(@"C:\Users\dsiva\source\repos\Tamagochi\Tamagochi\Media\parrot_eating.jpg");
+            await LoadAImageAsyncOnAction(@"/Media/parrot_eating.jpg");
         }
 
         //Play button
@@ -159,7 +159,7 @@ namespace Tamagochi
             animal.Happiness = Math.Min(animal.Happiness + 20, 100);
             happinessBar.Value = animal.Happiness;
 
-            await LoadAImageAsyncOnAction(@"C:\Users\dsiva\source\repos\Tamagochi\Tamagochi\Media\parrot_playing.jpg");
+            await LoadAImageAsyncOnAction(@"/Media/parrot_playing.jpg");
 
         }
 
@@ -169,7 +169,7 @@ namespace Tamagochi
             animal.Sleep = Math.Min(animal.Sleep + 20, 200);
             sleepBar.Value = animal.Sleep;
 
-            await LoadAImageAsyncOnAction(@"C:\Users\dsiva\source\repos\Tamagochi\Tamagochi\Media\parrot_sleeping.jpg");
+            await LoadAImageAsyncOnAction(@"/Media/parrot_sleeping.jpg");
 
         }
 
@@ -178,7 +178,7 @@ namespace Tamagochi
         {
             animal.Cleanness = Math.Min(animal.Cleanness + 20, 100);
 
-            await LoadAImageAsyncOnAction(@"C:\Users\dsiva\source\repos\Tamagochi\Tamagochi\Media\parrot_clean.jpg");
+            await LoadAImageAsyncOnAction(@"/Media/parrot_clean.jpg");
 
         }
 

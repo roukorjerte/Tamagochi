@@ -240,11 +240,10 @@
 
             <Image 
                 Name="GifImage"
-                gif:ImageBehavior.AnimatedSource="C:\Users\dsiva\source\repos\Tamagochi\Tamagochi\Media\base.gif"
+                gif:ImageBehavior.AnimatedSource="/Media/base.gif"
                 Grid.Row="4" />
             <Image 
                 Name="Image"
-                Source ="C:\Users\dsiva\source\repos\Tamagochi\Tamagochi\Media\parrot_eating.jpg"
                 Visibility="Hidden"
                 Grid.Row="4" />
 
