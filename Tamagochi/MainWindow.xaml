@@ -61,6 +61,7 @@
                 </Grid.ColumnDefinitions>
 
                 <!--header text design-->
+                <!--TODO binding does not see Name in such context-->
                 <TextBlock
                     Text="{Binding Path=Name}"
                     Foreground="White"

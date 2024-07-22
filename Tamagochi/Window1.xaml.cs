@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,7 @@ namespace Tamagochi
         }
 
         //when text in textbox changes, this text is assigned to animal Name
+        //TODO looks like the textbox value is not assigned to the variable Name
         private void petName_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox petNameTextBox = sender as TextBox;
