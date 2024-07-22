@@ -44,6 +44,9 @@ namespace Tamagochi
             TextBox petName = sender as TextBox;
             if (petName != null)
             {
+                // Комментрий Андрея
+                // ненужно переписывать имя каждый раз когда менятся любой символ, удаляем
+                // (наверное всю функцию (и из xaml тоже незабудь а то будет ошибка))
                 animal.Name = petName.Text;
                 Debug.WriteLine(animal.Name.ToString());
 
@@ -53,6 +56,9 @@ namespace Tamagochi
         //when user clicks continue button, it closes the current window and opens mMinWindow
         private void btnContinue_Click(object sender, RoutedEventArgs e)
         {
+            // Комментрий Андрея
+            // нужно передать имя зверька сюда
+            // взять его можно напрямую из petName.Text
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();

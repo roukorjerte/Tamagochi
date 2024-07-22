@@ -34,6 +34,8 @@ namespace Tamagochi
 
         {
             InitializeComponent();
+            // Комментрий Андрея
+            // получаем имя зверька и можно прикрутить его в свойство TextBlock.Text  сразу после InitializeComponent();
             animal = new Animal();
             animal.Hunger = 100;
             animal.Cleanness = 100;
