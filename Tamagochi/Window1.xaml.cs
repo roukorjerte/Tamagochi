@@ -28,12 +28,14 @@ namespace Tamagochi
 
         }
 
+        //allows to move screen with a mouse
         private void First_Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
 
+        //when text in textbox changes, this text is assigned to animal Name
         private void petName_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox petNameTextBox = sender as TextBox;
@@ -43,11 +45,24 @@ namespace Tamagochi
             }
 
         }
+        //when user clicks continue button, it closes the current window and opens mMinWindow
         private void btnContinue_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+
+        //Window closed
+        private void btnClose3_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        //Window collapsed
+        private void btnMinimize2_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
     }
 }

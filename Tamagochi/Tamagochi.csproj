@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Media\base1.jpg" />
+    <None Remove="Media\catBase.jpg" />
+    <None Remove="Media\dogBase.jpg" />
+    <None Remove="Media\hamsterBase.jpg" />
     <None Remove="Media\parrot_bored.jpg" />
     <None Remove="Media\parrot_clean.jpg" />
     <None Remove="Media\parrot_dead.jpg" />
@@ -30,6 +34,10 @@
 
   <ItemGroup>
     <Resource Include="Media\base.gif" />
+    <Resource Include="Media\base1.jpg" />
+    <Resource Include="Media\catBase.jpg" />
+    <Resource Include="Media\dogBase.jpg" />
+    <Resource Include="Media\hamsterBase.jpg" />
     <Resource Include="Media\parrot_bored.jpg" />
     <Resource Include="Media\parrot_clean.jpg" />
     <Resource Include="Media\parrot_dead.jpg" />

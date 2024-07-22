@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tamagochi"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         Title="Window1" Height="600" Width="350"
         WindowStyle="None"
@@ -14,10 +15,12 @@
         MouseDown="First_Window_MouseDown">
 
     <Border
+        
         CornerRadius="30"
         BorderThickness="5"
         Opacity="1"
         >
+        <!--border styling-->
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Color="#462AD8" Offset="0"/>
@@ -35,6 +38,7 @@
         </Border.Background>
 
         <Grid>
+            <!--grid base-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
@@ -48,6 +52,99 @@
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="15"/>
+                </Grid.ColumnDefinitions>
+
+                <!--header text design-->
+                <TextBlock
+                    Text="{Binding Path=Name}"
+                    Foreground="White"
+                    FontSize="16"
+                    FontFamily="Montserrat"
+                    Grid.Column="0"
+                    VerticalAlignment="Center"
+                    Margin="50,5,0,0"/>
+
+                <!--minimize button design-->
+                <Button
+                    x:Name="btnMinimize2"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Content="-"
+                    FontFamily="Montserrat"
+                    FontSize="16"
+                    Cursor="Hand"
+                    Grid.Column="1"
+                    Click="btnMinimize2_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#28aeed"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#278bef"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18" Height="18"
+                                    CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <!--close button design-->
+                <Button
+                    x:Name="btnClose3"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Content="X"
+                    FontFamily="Montserrat"
+                    FontSize="16"
+                    Cursor="Hand"
+                    Grid.Column="2"
+                    Click="btnClose3_Click"
+        >
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#da34ae"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#c62dae"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18" Height="18"
+                                    CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+
+            <!--Name your pet text block -->
             <TextBlock
                 Grid.Row="1"
                 Text="Enter name of your pet:"
@@ -59,6 +156,7 @@
                 >
             </TextBlock>
 
+            <!--Input field for animal name -->
             <TextBox
                 Grid.Row="2"
                 Foreground="White"
@@ -74,6 +172,7 @@
                 >
             </TextBox>
             
+            <!--text block "choose a pet" -->
             <TextBlock
                 Grid.Row="3"
                 Text="Choose a pet:"
@@ -85,21 +184,38 @@
                 >
             </TextBlock>
 
+            <!--grid with separators for images -->
             <Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="130"/>
                     <ColumnDefinition Width="20"/>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="130"/>
                     <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Column="1" 
+                    >
+                    <Button.Content>
+                        <Image Source="/Media/base1.jpg"/>
+                    </Button.Content>
+                </Button>
+
+                <Button
+                    Grid.Column="3" 
+                    >
+                    <Button.Content>
+                        <Image Source="/Media/catBase.jpg"/>
+                    </Button.Content>
+                </Button>
             </Grid>
             <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width=" 130"/>
                     <ColumnDefinition Width="20"/>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition />
+                    <ColumnDefinition Width=" 130"/>
                     <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
 
@@ -124,25 +240,42 @@
                 </TextBlock>
             </Grid>
 
-
+            <!--grid with separators for images 2 -->
             <Grid Grid.Row="6">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width=" 130"/>
                     <ColumnDefinition Width="20"/>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition />
+                    <ColumnDefinition Width=" 130"/>
                     <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Column="1" 
+                        >
+                    <Button.Content>
+                        <Image Source="/Media/dogBase.jpg"/>
+                    </Button.Content>
+                </Button>
+
+                <Button
+                    Grid.Column="3" 
+                        >
+                    <Button.Content>
+                        <Image Source="/Media/hamsterBase.jpg"/>
+                    </Button.Content>
+                </Button>
             </Grid>
             <Grid Grid.Row="7">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width=" 130"/>
                     <ColumnDefinition Width="20"/>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition />
+                    <ColumnDefinition Width=" 130"/>
                     <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
 
+                
                 <TextBlock
                 Grid.Column="3"
                 Text="Hamster"
@@ -164,6 +297,7 @@
                 </TextBlock>
             </Grid>
 
+            <!--button continue-->
             <Button
                     Grid.Row="8"
                     x:Name="btnContinue"
