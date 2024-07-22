@@ -159,7 +159,6 @@
                 Opacity="0.5"
                 Width="250"
                 Name="petName"
-                TextChanged="petName_TextChanged"
                 >
             </TextBox>
             

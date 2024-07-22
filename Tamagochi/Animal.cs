@@ -14,6 +14,13 @@ namespace Tamagochi
         private int _cleanness;
         private int _hunger;
         private string _name;
+        private string _animalType;
+
+        public string AnimalType
+        {
+            get { return _animalType; }
+            set { _animalType = value; }
+        }
 
         public string Name
         {

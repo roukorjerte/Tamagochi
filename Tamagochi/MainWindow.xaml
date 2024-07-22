@@ -63,7 +63,7 @@
                 <!--header text design-->
                 <!--TODO binding does not see Name in such context-->
                 <TextBlock
-                    Text="{Binding Path=Name}"
+                    Name="petNameDisplay"
                     Foreground="White"
                     FontSize="16"
                     FontFamily="Montserrat"

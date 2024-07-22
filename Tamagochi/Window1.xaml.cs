@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,29 +38,15 @@ namespace Tamagochi
                 DragMove();
         }
 
-        //when text in textbox changes, this text is assigned to animal Name
-        //TODO looks like the textbox value is not assigned to the variable Name
-        private void petName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            TextBox petName = sender as TextBox;
-            if (petName != null)
-            {
-                // Комментрий Андрея
-                // ненужно переписывать имя каждый раз когда менятся любой символ, удаляем
-                // (наверное всю функцию (и из xaml тоже незабудь а то будет ошибка))
-                animal.Name = petName.Text;
-                Debug.WriteLine(animal.Name.ToString());
-
-            }
-
-        }
+        
         //when user clicks continue button, it closes the current window and opens mMinWindow
         private void btnContinue_Click(object sender, RoutedEventArgs e)
         {
-            // Комментрий Андрея
-            // нужно передать имя зверька сюда
-            // взять его можно напрямую из petName.Text
-            MainWindow mainWindow = new MainWindow();
+            string petNameText = petName.Text;
+            animal.Name = petNameText;
+            string petType = animal.AnimalType;
+
+            MainWindow mainWindow = new MainWindow(petNameText, petType);
             mainWindow.Show();
             this.Close();
         }
@@ -82,6 +69,7 @@ namespace Tamagochi
             catButton.BorderThickness = new Thickness(1);
             DogButton.BorderThickness = new Thickness(1);
             hamsterButton.BorderThickness = new Thickness(1);
+            animal.AnimalType = "parrot";
 
         }
 
@@ -91,6 +79,8 @@ namespace Tamagochi
             catButton.BorderThickness = new Thickness(4);
             DogButton.BorderThickness = new Thickness(1);
             hamsterButton.BorderThickness = new Thickness(1);
+            animal.AnimalType = "cat";
+
         }
 
         private void DogButton_Click(object sender, RoutedEventArgs e)
@@ -99,6 +89,8 @@ namespace Tamagochi
             catButton.BorderThickness = new Thickness(1);
             DogButton.BorderThickness = new Thickness(4);
             hamsterButton.BorderThickness = new Thickness(1);
+            animal.AnimalType = "dog";
+
         }
 
         private void hamsterButton_Click(object sender, RoutedEventArgs e)
@@ -107,6 +99,8 @@ namespace Tamagochi
             catButton.BorderThickness = new Thickness(1);
             DogButton.BorderThickness = new Thickness(1);
             hamsterButton.BorderThickness = new Thickness(4);
+            animal.AnimalType = "hamster";
+
         }
     }
 }

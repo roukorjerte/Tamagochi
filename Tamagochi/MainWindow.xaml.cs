@@ -16,6 +16,7 @@ using System.Diagnostics.Metrics;
 using System.Security.Cryptography;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 
 
 namespace Tamagochi
@@ -30,17 +31,20 @@ namespace Tamagochi
         private DispatcherTimer timer;
         private int counter;
 
-        public MainWindow()
+        public MainWindow(string petName, string petType)
 
         {
             InitializeComponent();
-            // Комментрий Андрея
-            // получаем имя зверька и можно прикрутить его в свойство TextBlock.Text  сразу после InitializeComponent();
+
             animal = new Animal();
-            animal.Hunger = 100;
+            animal.Name = petName;
+            animal.Hunger = 0;
             animal.Cleanness = 100;
             animal.Happiness = 100;
-            animal.Sleep = 10;
+            animal.Sleep = 200;
+            animal.AnimalType = petType;
+
+            petNameDisplay.Text = animal.Name;
 
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -63,7 +67,21 @@ namespace Tamagochi
             }
             if (animal.Hunger == 0)
             {
-                await LoadImageAsyncOnStateChange(@"/Media/parrot_dead.jpg");
+                switch (animal.AnimalType)
+                    {
+                    case "parrot":
+                        await LoadImageAsyncOnStateChange(@"/Media/parrot_dead.jpg");
+                        break;
+                    case "cat":
+                        await LoadImageAsyncOnStateChange(@"/Media/catBase.jpg");
+                        break;
+                    case "dog":
+                        await LoadImageAsyncOnStateChange(@"/Media/dogBase.jpg");
+                        break;
+                    case "hamster":
+                        await LoadImageAsyncOnStateChange(@"/Media/hamsterBase.jpg");
+                        break;
+                }
             }
             if (animal.Cleanness > 0)
             {
