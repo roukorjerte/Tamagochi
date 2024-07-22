@@ -39,6 +39,7 @@ namespace Tamagochi
             animal.Cleanness = 100;
             animal.Happiness = 100;
             animal.Sleep = 10;
+            animal.Name = "AnimalName";
 
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);

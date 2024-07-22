@@ -62,7 +62,7 @@
 
                 <!--header text design-->
                 <TextBlock
-                    Text="PETNAME"
+                    Text="{Binding Path=Name}"
                     Foreground="White"
                     FontSize="16"
                     FontFamily="Montserrat"

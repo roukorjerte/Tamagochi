@@ -1,0 +1,205 @@
+﻿<Window x:Class="Tamagochi.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tamagochi"
+        mc:Ignorable="d"
+        Title="Window1" Height="600" Width="350"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="First_Window_MouseDown">
+
+    <Border
+        CornerRadius="30"
+        BorderThickness="5"
+        Opacity="1"
+        >
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34AE" Offset="0.5"/>
+                <GradientStop Color="#8A16C1" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <!--background styling-->
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#060531" Offset="0.5"/>
+                <GradientStop Color="#1b1448" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition />
+                <RowDefinition Height="20"/>
+                <RowDefinition />
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                Grid.Row="1"
+                Text="Enter name of your pet:"
+                Foreground="White"
+                FontFamily="Montserrat"
+                FontSize="18"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                >
+            </TextBlock>
+
+            <TextBox
+                Grid.Row="2"
+                Foreground="White"
+                FontFamily="Montserrat"
+                FontSize="18"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="#FF836EEF"
+                Opacity="0.5"
+                Width="250"
+                Name="petName"
+                TextChanged="petName_TextChanged"
+                >
+            </TextBox>
+            
+            <TextBlock
+                Grid.Row="3"
+                Text="Choose a pet:"
+                Foreground="White"
+                FontFamily="Montserrat"
+                FontSize="18"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                >
+            </TextBlock>
+
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                    Grid.Column="3"
+                    Text="Cat"
+                    Foreground="White"
+                    FontSize="15"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+    >
+                </TextBlock>
+
+                <TextBlock
+                    Grid.Column="1"
+                    Text="Parrot"
+                    Foreground="White"
+                    FontSize="15"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    >
+                </TextBlock>
+            </Grid>
+
+
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                Grid.Column="3"
+                Text="Hamster"
+                Foreground="White"
+                FontSize="15"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+>
+                </TextBlock>
+
+                <TextBlock
+                Grid.Column="1"
+                Text="Dog"
+                Foreground="White"
+                FontSize="15"
+                HorizontalAlignment="Center"
+                VerticalAlignment="top"
+                >
+                </TextBlock>
+            </Grid>
+
+            <Button
+                    Grid.Row="8"
+                    x:Name="btnContinue"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Content="Continue"
+                    FontFamily="Montserrat"
+                    FontSize="16"
+                    Cursor="Hand"
+                    Grid.Column="0"
+                    Click="btnContinue_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#da34ae"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#a82586"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                    CornerRadius="9"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </Grid>
+    </Border>
+    
+</Window>
