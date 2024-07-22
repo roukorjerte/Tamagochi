@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation.Text;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -40,10 +41,12 @@ namespace Tamagochi
         //TODO looks like the textbox value is not assigned to the variable Name
         private void petName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox petNameTextBox = sender as TextBox;
-            if (petNameTextBox != null)
+            TextBox petName = sender as TextBox;
+            if (petName != null)
             {
-                animal.Name = petNameTextBox.Text;
+                animal.Name = petName.Text;
+                Debug.WriteLine(animal.Name.ToString());
+
             }
 
         }
@@ -65,6 +68,39 @@ namespace Tamagochi
         private void btnMinimize2_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
+        }
+
+        private void parrotButton_Click(object sender, RoutedEventArgs e)
+        {
+            parrotButton.BorderThickness = new Thickness(4);
+            catButton.BorderThickness = new Thickness(1);
+            DogButton.BorderThickness = new Thickness(1);
+            hamsterButton.BorderThickness = new Thickness(1);
+
+        }
+
+        private void catButton_Click(object sender, RoutedEventArgs e)
+        {
+            parrotButton.BorderThickness = new Thickness(1);
+            catButton.BorderThickness = new Thickness(4);
+            DogButton.BorderThickness = new Thickness(1);
+            hamsterButton.BorderThickness = new Thickness(1);
+        }
+
+        private void DogButton_Click(object sender, RoutedEventArgs e)
+        {
+            parrotButton.BorderThickness = new Thickness(1);
+            catButton.BorderThickness = new Thickness(1);
+            DogButton.BorderThickness = new Thickness(4);
+            hamsterButton.BorderThickness = new Thickness(1);
+        }
+
+        private void hamsterButton_Click(object sender, RoutedEventArgs e)
+        {
+            parrotButton.BorderThickness = new Thickness(1);
+            catButton.BorderThickness = new Thickness(1);
+            DogButton.BorderThickness = new Thickness(1);
+            hamsterButton.BorderThickness = new Thickness(4);
         }
     }
 }

@@ -60,15 +60,6 @@
                     <ColumnDefinition Width="15"/>
                 </Grid.ColumnDefinitions>
 
-                <!--header text design-->
-                <TextBlock
-                    Text="{Binding Path=Name}"
-                    Foreground="White"
-                    FontSize="16"
-                    FontFamily="Montserrat"
-                    Grid.Column="0"
-                    VerticalAlignment="Center"
-                    Margin="50,5,0,0"/>
 
                 <!--minimize button design-->
                 <Button
@@ -196,14 +187,22 @@
 
                 <Button
                     Grid.Column="1" 
-                    >
+                    BorderBrush="Aqua"
+                    BorderThickness="1"
+                    Name="parrotButton"
+                    Click="parrotButton_Click">
                     <Button.Content>
                         <Image Source="/Media/base1.jpg"/>
                     </Button.Content>
+                    
                 </Button>
 
                 <Button
                     Grid.Column="3" 
+                    BorderBrush="Aqua"
+                    BorderThickness="1"
+                    Name="catButton"
+                    Click="catButton_Click"
                     >
                     <Button.Content>
                         <Image Source="/Media/catBase.jpg"/>
@@ -251,7 +250,11 @@
                 </Grid.ColumnDefinitions>
 
                 <Button
-                    Grid.Column="1" 
+                    Grid.Column="1"
+                    BorderBrush="Aqua"
+                    BorderThickness="1"
+                    Name="DogButton"
+                    Click="DogButton_Click"
                         >
                     <Button.Content>
                         <Image Source="/Media/dogBase.jpg"/>
@@ -259,7 +262,11 @@
                 </Button>
 
                 <Button
-                    Grid.Column="3" 
+                    Grid.Column="3"
+                    BorderBrush="Aqua"
+                    BorderThickness="1"
+                    Name="hamsterButton"
+                    Click="hamsterButton_Click"
                         >
                     <Button.Content>
                         <Image Source="/Media/hamsterBase.jpg"/>
