@@ -21,7 +21,29 @@
     <None Remove="Media\parrot_playing.jpg" />
     <None Remove="Media\parrot_sleeping.jpg" />
     <None Remove="Media\parrot_sleepy.jpg" />
+    <None Remove="Media\Sounds\cat.mp3" />
     <None Remove="Media\Sounds\chicken.wav" />
+    <None Remove="Media\Sounds\dog.mp3" />
+    <None Remove="Media\Sounds\hamster.wav" />
+    <None Remove="Media\Sounds\parrot.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Media\Sounds\cat.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\Sounds\chicken.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\Sounds\dog.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\Sounds\hamster.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\Sounds\parrot.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
  
@@ -47,7 +69,6 @@
     <Resource Include="Media\parrot_playing.jpg" />
     <Resource Include="Media\parrot_sleeping.jpg" />
     <Resource Include="Media\parrot_sleepy.jpg" />
-    <Resource Include="Media\Sounds\chicken.wav" />
   </ItemGroup>
 
 </Project>

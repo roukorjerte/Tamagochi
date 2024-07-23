@@ -154,10 +154,27 @@ namespace Tamagochi
             switch (animal.AnimalType)
             {
                 case "parrot":
-                    mediaPlayer.Open(new Uri(@"/Media/Sounds/chicken.wav", UriKind.Relative));
+                    mediaPlayer.Volume = 1;
+                    mediaPlayer.Open(new Uri(Directory.GetCurrentDirectory() + @"\Media\Sounds\parrot.wav", UriKind.Absolute));
+                    break;
+
+                case "dog":
+                    mediaPlayer.Volume = 1;
+                    mediaPlayer.Open(new Uri(Directory.GetCurrentDirectory() + @"\Media\Sounds\dog.mp3", UriKind.Absolute));
+                    break;
+
+                case "cat":
+                    mediaPlayer.Volume = 1;
+                    mediaPlayer.Open(new Uri(Directory.GetCurrentDirectory() + @"\Media\Sounds\cat.mp3", UriKind.Absolute));
+                    break;
+
+                case "hamster":
+                    mediaPlayer.Volume = 1;
+                    mediaPlayer.Open(new Uri(Directory.GetCurrentDirectory() + @"\Media\Sounds\hamster.wav", UriKind.Absolute));
                     break;
             }
 
+            
             mediaPlayer.Play();
         }
 
