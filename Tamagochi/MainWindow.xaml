@@ -13,6 +13,7 @@
         Background="Transparent"
         AllowsTransparency="True"
         MouseDown="Window_MouseDown"
+        Icon="Media\icon.ico"
         >
         
         <Border
