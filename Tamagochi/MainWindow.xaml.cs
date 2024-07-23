@@ -30,6 +30,7 @@ namespace Tamagochi
         private Animal animal;
         private DispatcherTimer timer;
         private int counter;
+        private MediaPlayer mediaPlayer = new MediaPlayer();
 
         public MainWindow(string petName, string petType)
 
@@ -54,6 +55,8 @@ namespace Tamagochi
             hungerBar.Value = animal.Hunger;
             happinessBar.Value = animal.Happiness;
             sleepBar.Value = animal.Sleep;
+
+            PlaySound();
         }
 
         //Stats decrease and change of image if reached 0
@@ -68,7 +71,7 @@ namespace Tamagochi
             if (animal.Hunger == 0)
             {
                 switch (animal.AnimalType)
-                    {
+                {
                     case "parrot":
                         await LoadImageAsyncOnStateChange(@"/Media/parrot_dead.jpg");
                         break;
@@ -145,6 +148,18 @@ namespace Tamagochi
             Image.Visibility = Visibility.Visible;
         }
 
+        //method to play sound
+        private async Task PlaySound()
+        {
+            switch (animal.AnimalType)
+            {
+                case "parrot":
+                    mediaPlayer.Open(new Uri(@"/Media/Sounds/chicken.wav", UriKind.Relative));
+                    break;
+            }
+
+            mediaPlayer.Play();
+        }
 
         //Window can be moved via mouse
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

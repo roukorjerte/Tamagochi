@@ -48,8 +48,7 @@
                 <RowDefinition/>
                 <RowDefinition Height="10"/>
 
-            </Grid.RowDefinitions>
-
+            </Grid.RowDefinitions>            
 
             <!--Header-->
             <Grid>
@@ -59,7 +58,7 @@
                     <ColumnDefinition />
                     <ColumnDefinition Width="15"/>
                 </Grid.ColumnDefinitions>
-
+                
                 <!--header text design-->
                 <!--TODO binding does not see Name in such context-->
                 <TextBlock
