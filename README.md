@@ -77,6 +77,6 @@ It also taught me that **finishing projects** feels *really* good 💪
 
 ## 💬 Feedback welcome!
 
-I'm always happy to hear suggestions, feedback or ideas! You can [open an issue](#) or contact me directly.
+I'm always happy to hear suggestions, feedback or ideas! You can [open an issue](https://github.com/roukorjerte/Tamagochi/issues/new) or contact me directly.
 
 ---
