@@ -68,6 +68,7 @@ It also taught me that **finishing projects** feels *really* good 💪
 
 ## 🧸 Future ideas
 
+- Add animations and different images for different animals
 - Add mini-games (e.g. ball throwing)
 - Save/load pet progress
 - Add random events (like the pet asking questions or telling jokes!)
