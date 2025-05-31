@@ -47,11 +47,11 @@ It helped me:
 
 ## 📸 Screenshots
 
-![Screenshot 1](screenshots/pet_idle.png)  
-*Pet is waiting for your attention...*
+![Gif 1](screenshots/MovingSelectPet.gif)  
+*You can move the app window around, select the pet and pets name*
 
-![Screenshot 2](screenshots/pet_hungry.png)  
-*Pet is hungry! Better feed it...*
+![Gif 2](screenshots/playingWithPet.gif)  
+*Player can interract with the pet in different ways*
 
 ---
 
